@@ -1,9 +1,3 @@
-:root {
-  --color-dark: #000;
-  --color-dark-30: #303030;
-  --color-light: #fff;
-}
-
 *,
 *:before,
 *:after {
@@ -12,9 +6,12 @@
   box-sizing: border-box;
 }
 
-body {
-  color: var(--color-light);
-  background: #444;
+html, body {
+  height: 100%;
+}
+
+.hidden {
+  display: none;
 }
 
 /****************
@@ -29,70 +26,74 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-header {
+.quote {
   font-size: 0.75rem;
   line-height: 1.833;
 }
 @media (min-width: 48em) {
-  header {
+  .quote {
     font-size: 1.125rem;
     line-height: 1.556;
   }
 }
-header .quote-author {
+
+.quote-author {
   font-weight: var(--font-bold);
 }
 
-main .greeting {
+.greeting {
   font-size: 0.9375rem;
   line-height: 1.667;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 @media (min-width: 48em) {
-  main .greeting {
+  .greeting {
     font-size: 1.125rem;
     line-height: 1.556;
   }
 }
 @media (min-width: 78em) {
-  main .greeting {
+  .greeting {
     font-size: 1.25rem;
     line-height: 1.4;
   }
 }
-main .time {
+
+.time {
   font-size: 6.25rem;
   font-weight: var(--font-bold);
   line-height: 1;
   letter-spacing: -0.025em;
 }
 @media (min-width: 48em) {
-  main .time {
+  .time {
     font-size: 10.9375rem;
   }
 }
 @media (min-width: 78em) {
-  main .time {
+  .time {
     font-size: 12.5rem;
   }
 }
-main .timezone {
+
+.timezone {
   font-size: 0.9375rem;
   font-weight: var(--font-light);
   line-height: 1.75rem;
 }
 @media (min-width: 48em) {
-  main .timezone {
+  .timezone {
     font-size: 2rem;
   }
 }
 @media (min-width: 78em) {
-  main .timezone {
+  .timezone {
     font-size: 2.5rem;
   }
 }
-main .location {
+
+.location {
   font-size: 0.9375rem;
   font-weight: var(--font-bold);
   line-height: 1.867;
@@ -100,12 +101,13 @@ main .location {
   letter-spacing: 0.2em;
 }
 @media (min-width: 48em) {
-  main .location {
+  .location {
     font-size: 1.125rem;
     line-height: 1.556;
   }
 }
-main .more-button {
+
+.more-button {
   font-size: 0.75rem;
   font-weight: var(--font-bold);
   line-height: 1.167;
@@ -113,41 +115,128 @@ main .more-button {
   text-transform: uppercase;
 }
 @media (min-width: 48em) {
-  main .more-button {
+  .more-button {
     font-size: 1em;
     line-height: 1.75;
   }
 }
 
-.more .header {
+.details .title {
   font-size: 0.625rem;
   line-height: 1.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 @media (min-width: 48em) {
-  .more .header {
+  .details .title {
     font-size: 0.8125rem;
   }
 }
 @media (min-width: 78em) {
-  .more .header {
+  .details .title {
     font-size: 0.9375rem;
   }
 }
-.more .value {
+.details .value {
   font-size: 1.25rem;
   font-weight: var(--font-bold);
 }
 @media (min-width: 48em) {
-  .more .value {
+  .details .value {
     font-size: 2.5rem;
   }
 }
 @media (min-width: 78em) {
-  .more .value {
+  .details .value {
     font-size: 3.5rem;
   }
+}
+
+/***********************
+ * Colors & Background *
+ ***********************/
+:root {
+  --color-dark: #000;
+  --color-dark-30: #303030;
+  --color-dark-50: rgba(0, 0, 0, 0.5);
+  --color-light: #fff;
+}
+
+body {
+  color: var(--color-light);
+}
+
+main {
+  background: url("../assets/mobile/bg-image-daytime.jpg") no-repeat, rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.more-button {
+  background: var(--color-light);
+  color: var(--color-dark-50);
+}
+
+/**********
+ * Layout *
+ **********/
+main {
+  height: 100%;
+  padding: 2em 1.625em 2.5em;
+}
+
+.quote {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  padding-bottom: 10.5em;
+}
+.quote .quote-author {
+  margin-top: 0.667em;
+}
+.quote img {
+  grid-column: 2/-1;
+}
+
+.greeting {
+  margin-top: 6.667em;
+}
+.greeting img {
+  vertical-align: top;
+  margin-right: 1em;
+}
+
+.clock {
+  margin-top: 1em;
+}
+
+.location {
+  margin-top: 1em;
+}
+
+.more-button {
+  margin-top: 4em;
+  padding-block: 0.33em;
+  padding-inline: 1.5em 0.33em;
+  border: 0;
+  border-radius: 2.333em;
+  display: flex;
+  align-items: center;
+}
+.more-button > * {
+  display: block;
+}
+.more-button img {
+  width: 2.667em;
+  margin-left: 1.33em;
+  transform: rotate(180deg);
+}
+
+.details {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

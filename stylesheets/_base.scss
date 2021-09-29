@@ -1,9 +1,3 @@
-:root {
-  --color-dark: #000;
-  --color-dark-30: #303030;
-  --color-light: #fff;
-}
-
 *,
 *:before,
 *:after {
@@ -12,7 +6,10 @@
   box-sizing: border-box;
 }
 
-body {
-  color: var(--color-light);
-  background: #444; //TODO: temporary, replace with image
+html, body {
+  height: 100%;
+}
+
+.hidden {
+  display: none;
 }
