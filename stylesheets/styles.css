@@ -13,17 +13,34 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
   color: var(--color-light);
   background: #444;
+}
+
+/****************
+ *  Typography  *
+ ****************/
+:root {
+  --font-light: 300;
+  --font-bold: 700;
+}
+
+body {
+  font-family: "Inter", sans-serif;
 }
 
 header {
   font-size: 0.75rem;
   line-height: 1.833;
 }
+@media (min-width: 48em) {
+  header {
+    font-size: 1.125rem;
+    line-height: 1.556;
+  }
+}
 header .quote-author {
-  font-weight: bold;
+  font-weight: var(--font-bold);
 }
 
 main .greeting {
@@ -32,41 +49,105 @@ main .greeting {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+@media (min-width: 48em) {
+  main .greeting {
+    font-size: 1.125rem;
+    line-height: 1.556;
+  }
+}
+@media (min-width: 78em) {
+  main .greeting {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
 main .time {
   font-size: 6.25rem;
-  font-weight: bold;
+  font-weight: var(--font-bold);
   line-height: 1;
   letter-spacing: -0.025em;
 }
+@media (min-width: 48em) {
+  main .time {
+    font-size: 10.9375rem;
+  }
+}
+@media (min-width: 78em) {
+  main .time {
+    font-size: 12.5rem;
+  }
+}
 main .timezone {
   font-size: 0.9375rem;
-  font-weight: 300;
-  line-height: 1.867;
+  font-weight: var(--font-light);
+  line-height: 1.75rem;
+}
+@media (min-width: 48em) {
+  main .timezone {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 78em) {
+  main .timezone {
+    font-size: 2.5rem;
+  }
 }
 main .location {
   font-size: 0.9375rem;
-  font-weight: bold;
+  font-weight: var(--font-bold);
   line-height: 1.867;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
+@media (min-width: 48em) {
+  main .location {
+    font-size: 1.125rem;
+    line-height: 1.556;
+  }
+}
 main .more-button {
   font-size: 0.75rem;
-  font-weight: bold;
+  font-weight: var(--font-bold);
   line-height: 1.167;
   letter-spacing: 0.3125em;
   text-transform: uppercase;
 }
+@media (min-width: 48em) {
+  main .more-button {
+    font-size: 1em;
+    line-height: 1.75;
+  }
+}
 
 .more .header {
   font-size: 0.625rem;
-  line-height: 2.8;
+  line-height: 1.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+@media (min-width: 48em) {
+  .more .header {
+    font-size: 0.8125rem;
+  }
+}
+@media (min-width: 78em) {
+  .more .header {
+    font-size: 0.9375rem;
+  }
+}
 .more .value {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: var(--font-bold);
+}
+@media (min-width: 48em) {
+  .more .value {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 78em) {
+  .more .value {
+    font-size: 3.5rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

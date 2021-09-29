@@ -1,0 +1,132 @@
+@use "resolutions" as *;
+
+/****************
+ *  Typography  *
+ ****************/
+
+:root {
+  --font-light: 300;
+  --font-bold: 700;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  font-size: 0.75rem;
+  line-height: 1.833;
+
+  @include for-tablet {
+    font-size: 1.125rem;
+    line-height: 1.556;
+  }
+
+  .quote-author {
+    font-weight: var(--font-bold);
+  }
+}
+
+main {
+  .greeting {
+    font-size: 0.9375rem;
+    line-height: 1.667;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    @include for-tablet {
+      font-size: 1.125rem;
+      line-height: 1.556;
+    }
+
+    @include for-desktop {
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  }
+
+  .time {
+    font-size: 6.25rem;
+    font-weight: var(--font-bold);
+    line-height: 1;
+    letter-spacing: -0.025em;
+
+    @include for-tablet {
+      font-size: 10.9375rem;
+    }
+
+    @include for-desktop {
+      font-size: 12.5rem;
+    }
+  }
+
+  .timezone {
+    font-size: 0.9375rem;
+    font-weight: var(--font-light);
+    line-height: 1.75rem;
+
+    @include for-tablet {
+      font-size: 2rem;
+    }
+
+    @include for-desktop {
+      font-size: 2.5rem;
+    }
+  }
+
+  .location {
+    font-size: 0.9375rem;
+    font-weight: var(--font-bold);
+    line-height: 1.867;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+
+    @include for-tablet {
+      font-size: 1.125rem;
+      line-height: 1.556;
+    }
+  }
+
+  .more-button {
+    font-size: 0.75rem;
+    font-weight: var(--font-bold);
+    line-height: 1.167;
+    letter-spacing: 0.3125em;
+    text-transform: uppercase;
+
+    @include for-tablet {
+      font-size: 1em;
+      line-height: 1.75;
+    }
+  }
+}
+
+.more {
+  .header {
+    font-size: 0.625rem;
+    line-height: 1.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    @include for-tablet {
+      font-size: 0.8125rem;
+    }
+
+    @include for-desktop {
+      font-size: 0.9375rem;
+    }
+  }
+
+  .value {
+    font-size: 1.25rem;
+    font-weight: var(--font-bold);
+
+    @include for-tablet {
+      font-size: 2.5rem;
+    }
+
+    @include for-desktop {
+      font-size: 3.5rem;
+    }
+  }
+}
