@@ -1,9 +1,72 @@
+:root {
+  --color-dark: #000;
+  --color-dark-30: #303030;
+  --color-light: #fff;
+}
+
 *,
 *:before,
 *:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--color-light);
+  background: #444;
+}
+
+header {
+  font-size: 0.75rem;
+  line-height: 1.833;
+}
+header .quote-author {
+  font-weight: bold;
+}
+
+main .greeting {
+  font-size: 0.9375rem;
+  line-height: 1.667;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+main .time {
+  font-size: 6.25rem;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+main .timezone {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.867;
+}
+main .location {
+  font-size: 0.9375rem;
+  font-weight: bold;
+  line-height: 1.867;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+main .more-button {
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.167;
+  letter-spacing: 0.3125em;
+  text-transform: uppercase;
+}
+
+.more .header {
+  font-size: 0.625rem;
+  line-height: 2.8;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.more .value {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=styles.css.map */
