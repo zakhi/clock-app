@@ -15,6 +15,15 @@ body {
   color: var(--color-light);
 }
 
+.quote button {
+  opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    opacity: unset;
+  }
+}
+
 main {
   background: url("../assets/mobile/bg-image-daytime.jpg") no-repeat, rgba(0, 0, 0, 0.4);
   background-size: cover;
@@ -24,6 +33,11 @@ main {
 .more-button {
   background: var(--color-light);
   color: var(--color-dark-50);
+
+  &:hover img,
+  &:focus img {
+    opacity: 0.5;
+  }
 }
 
 .details {

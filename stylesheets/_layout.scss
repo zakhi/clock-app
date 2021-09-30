@@ -11,18 +11,11 @@ main {
 
 .quote {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  grid-template: auto auto / auto auto;
   grid-auto-flow: column;
+  gap: 0.5em 1em;
+  align-items: start;
   padding-bottom: 10.22em;
-
-  .quote-author {
-    margin-top: 0.667em;
-  }
-
-  img {
-    grid-column: 2 / -1;
-  }
 }
 
 .greeting {
@@ -54,7 +47,6 @@ main {
   margin-top: 4em;
   padding-block: 0.33em;
   padding-inline: 1.5em 0.33em;
-  border: 0;
   border-radius: 2.333em;
   display: flex;
   align-items: center;

@@ -14,6 +14,15 @@ ul {
   list-style-type: none;
 }
 
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
 .hidden {
   display: none !important;
 }
@@ -171,6 +180,13 @@ body {
   color: var(--color-light);
 }
 
+.quote button {
+  opacity: 0.5;
+}
+.quote button:hover, .quote button:focus {
+  opacity: unset;
+}
+
 main {
   background: url("../assets/mobile/bg-image-daytime.jpg") no-repeat, rgba(0, 0, 0, 0.4);
   background-size: cover;
@@ -180,6 +196,9 @@ main {
 .more-button {
   background: var(--color-light);
   color: var(--color-dark-50);
+}
+.more-button:hover img, .more-button:focus img {
+  opacity: 0.5;
 }
 
 .details {
@@ -198,16 +217,11 @@ main {
 
 .quote {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  grid-template: auto auto/auto auto;
   grid-auto-flow: column;
+  gap: 0.5em 1em;
+  align-items: start;
   padding-bottom: 10.22em;
-}
-.quote .quote-author {
-  margin-top: 0.667em;
-}
-.quote img {
-  grid-column: 2/-1;
 }
 
 .greeting {
@@ -238,7 +252,6 @@ main {
   margin-top: 4em;
   padding-block: 0.33em;
   padding-inline: 1.5em 0.33em;
-  border: 0;
   border-radius: 2.333em;
   display: flex;
   align-items: center;
