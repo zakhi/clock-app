@@ -1,6 +1,6 @@
 const moreButton = document.querySelector(".more-button");
 
-moreButton.addEventListener("click", e => {
+moreButton.addEventListener("click", _ => {
     document.querySelector(".quote").classList.toggle("hidden")
     document.querySelector(".details").classList.toggle("hidden")
     moreButton.querySelector("img").classList.toggle("pointing-down")
@@ -9,19 +9,48 @@ moreButton.addEventListener("click", e => {
     buttonText.textContent = buttonText.textContent === "More" ? "Less" : "More"
 })
 
-const timeData = await fetchTimeData()
+await Promise.all([fetchTimeData(), fetchCity()])
 
-document.querySelector(".time").textContent = new Date(timeData.datetime).toLocaleTimeString("en-GB", {
-    hour: "2-digit", minute: "2-digit"
-})
+document.querySelector(".greeting").classList.remove("hidden")
+document.querySelector(".clock").classList.remove("hidden")
+document.querySelector(".more-button").classList.remove("hidden")
+document.querySelector(".location").classList.remove("hidden")
 
-document.querySelector(".timezone").textContent = timeData.abbreviation
-document.getElementById("current-timezone").textContent = timeData.timezone
-document.getElementById("day-of-year").textContent = timeData.day_of_year
-document.getElementById("day-of-week").textContent = timeData.day_of_week
-document.getElementById("week-number").textContent = timeData.week_number
 
-async function fetchTimeData() {
-    const response = await fetch("https://worldtimeapi.org/api/ip")
-    return await response.json()
+function fetchTimeData() {
+    return fetch("https://worldtimeapi.org/api/ip")
+        .then(response => response.json())
+        .then(timeData => {
+            const date = new Date(timeData.datetime);
+
+            document.querySelector(".time").textContent = date.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })
+            document.querySelector(".timezone").textContent = timeData.abbreviation
+            document.getElementById("current-timezone").textContent = timeData.timezone
+            document.getElementById("day-of-year").textContent = timeData.day_of_year
+            document.getElementById("day-of-week").textContent = timeData.day_of_week
+            document.getElementById("week-number").textContent = timeData.week_number
+            document.getElementById("simple-greeting").textContent = greetingBy(date.getHours())
+            document.querySelector(".greeting img").setAttribute("src", `assets/desktop/icon-${isDaytime(date.getHours()) ? "sun" : "moon"}.svg`)
+            document.documentElement.style.setProperty("--background-main", `var(--background-${isDaytime(date.getHours()) ? "day" : "night"}time)`)
+        })
+}
+
+function fetchCity() {
+    return fetch("https://freegeoip.app/json/")
+        .then(response => response.json())
+        .then(locationData => {
+            document.querySelector(".location").textContent = `In ${locationData.city}, ${locationData.country_code}`
+        })
+}
+
+function greetingBy(hours) {
+    if (isDaytime(hours)) {
+        return hours >= 12 ? "Good afternoon" : "Good morning"
+    }
+
+    return "Good evening"
+}
+
+function isDaytime(hours) {
+    return hours >=5 && hours < 18
 }
