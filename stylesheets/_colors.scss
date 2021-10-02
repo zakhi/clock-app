@@ -6,6 +6,7 @@
   --color-dark: #000;
   --color-dark-30: #303030;
   --color-dark-50: rgba(0, 0, 0, 0.5);
+  --color-dark-75: rgba(0, 0, 0, 0.75);
   --color-light: #fff;
   --color-light-75: rgba(255, 255, 255, 0.75);
 
@@ -47,4 +48,9 @@ main {
   background: var(--color-light-75);
   backdrop-filter: blur(2.5em);
   color: var(--color-dark-30);
+
+  &.evening {
+    background: var(--color-dark-75);
+    color: var(--color-light);
+  }
 }

@@ -19,6 +19,14 @@ function fetchTimeData() {
             document.getElementById("simple-greeting").textContent = greetingBy(date.getHours())
             document.querySelector(".greeting img").setAttribute("src", `assets/desktop/icon-${isDaytime(date.getHours()) ? "sun" : "moon"}.svg`)
             document.documentElement.style.setProperty("--background-main", `var(--background-${isDaytime(date.getHours()) ? "day" : "night"}time)`)
+
+            const detailsClasses = document.querySelector(".details").classList
+
+            if (isDaytime(date.getHours())) {
+                detailsClasses.remove("evening")
+            } else {
+                detailsClasses.add("evening")
+            }
         })
 }
 

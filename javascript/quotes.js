@@ -1,6 +1,9 @@
 await fetchQuote()
 
-document.querySelector(".quote button").addEventListener("click", fetchQuote)
+document.querySelector(".quote button").addEventListener("click", async _ => {
+    document.activeElement.blur()
+    await fetchQuote()
+})
 
 async function fetchQuote() {
     const quote = await fetch("https://api.quotable.io/random").then(response => response.json())
