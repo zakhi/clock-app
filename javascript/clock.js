@@ -1,20 +1,7 @@
-const moreButton = document.querySelector(".more-button");
-
-moreButton.addEventListener("click", _ => {
-    document.querySelector(".quote").classList.toggle("hidden")
-    document.querySelector(".details").classList.toggle("hidden")
-    moreButton.querySelector("img").classList.toggle("pointing-down")
-
-    const buttonText = moreButton.querySelector("span")
-    buttonText.textContent = buttonText.textContent === "More" ? "Less" : "More"
-})
-
 await Promise.all([fetchTimeData(), fetchCity()])
 
-document.querySelector(".greeting").classList.remove("hidden")
-document.querySelector(".clock").classList.remove("hidden")
-document.querySelector(".more-button").classList.remove("hidden")
-document.querySelector(".location").classList.remove("hidden")
+document.querySelector(".clock").classList.remove("invisible")
+document.querySelector(".more-button").classList.remove("invisible")
 
 
 function fetchTimeData() {

@@ -27,6 +27,10 @@ button:focus {
   display: none !important;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 /****************
  *  Typography  *
  ****************/
@@ -216,15 +220,25 @@ main {
 main {
   height: 100%;
   padding: 2em 1.625em 2.5em;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-items: end start;
+}
+main.compact {
+  grid-template-rows: max-content auto;
+  align-items: start;
+}
+main.compact .quote {
+  display: none;
 }
 
 .quote {
+  width: 100%;
   display: grid;
-  grid-template: auto auto/auto auto;
+  grid-template: auto auto/1fr auto;
   grid-auto-flow: column;
   gap: 0.5em 1em;
   align-items: start;
-  padding-bottom: 10.22em;
 }
 
 .greeting {

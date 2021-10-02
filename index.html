@@ -10,13 +10,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="stylesheet" href="stylesheets/styles.css">
 
-  <script src="javascript/script.js" type="module"></script>
+  <script src="javascript/clock.js" type="module"></script>
+  <script src="javascript/quotes.js" type="module"></script>
+  <script src="javascript/details.js" type="module"></script>
 
   <title>Frontend Mentor | Clock App</title>
 </head>
 <body>
   <main>
-    <div class="quote">
+    <div class="quote invisible">
       <p class="quote-text">
         “The science of operations, as derived from
         mathematics more especially, is a science of itself,
@@ -27,17 +29,19 @@
       </p>
       <button><img src="assets/desktop/icon-refresh.svg" alt="Refresh Quote"></button>
     </div>
-    <p class="greeting hidden">
-      <img src="assets/desktop/icon-sun.svg" alt=""><span id="simple-greeting">Good morning</span><span class="extended-greeting">, it's currently</span>
-    </p>
-    <p class="clock hidden">
-      <span class="time">11:37</span>
-      <span class="timezone">BST</span>
-    </p>
-    <p class="location hidden">
-      In London, UK
-    </p>
-    <button class="more-button hidden">
+    <div class="clock invisible">
+      <p class="greeting">
+        <img src="assets/desktop/icon-sun.svg" alt=""><span id="simple-greeting">Good morning</span><span class="extended-greeting">, it's currently</span>
+      </p>
+      <p class="current-time">
+        <span class="time">11:37</span>
+        <span class="timezone">BST</span>
+      </p>
+      <p class="location">
+        In London, UK
+      </p>
+    </div>
+    <button class="more-button invisible">
       <span>More</span>
       <img src="assets/desktop/icon-arrow-up.svg" alt="" class="pointing-down">
     </button>
