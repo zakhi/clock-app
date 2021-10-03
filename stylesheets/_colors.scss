@@ -6,9 +6,10 @@
 
 :root {
   --color-dark: #000;
-  --color-dark-30: #303030;
   --color-dark-50: rgba(0, 0, 0, 0.5);
   --color-dark-75: rgba(0, 0, 0, 0.75);
+  --color-less-dark: #303030;
+  --color-less-dark-25: rgba(48, 48, 48, 0.25);
   --color-light: #fff;
   --color-light-75: rgba(255, 255, 255, 0.75);
 }
@@ -26,7 +27,7 @@ body {
   }
 }
 
-main {
+body {
   --background-image: url("../assets/mobile/bg-image-daytime.jpg");
 
   @include for-tablet {
@@ -67,10 +68,16 @@ main {
 .details {
   background: var(--color-light-75);
   backdrop-filter: blur(2.5em);
-  color: var(--color-dark-30);
+  color: var(--color-less-dark);
 
   &.evening {
     background: var(--color-dark-75);
     color: var(--color-light);
+  }
+
+  li:nth-of-type(3), li:nth-of-type(4) {
+    @include for-desktop {
+      border-left: 1px solid var(--color-less-dark-25);
+    }
   }
 }

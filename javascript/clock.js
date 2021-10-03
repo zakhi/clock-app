@@ -18,7 +18,7 @@ function fetchTimeData() {
             document.getElementById("week-number").textContent = timeData.week_number
             document.getElementById("simple-greeting").textContent = greetingBy(date.getHours())
             document.querySelector(".greeting img").setAttribute("src", `assets/desktop/icon-${isDaytime(date.getHours()) ? "sun" : "moon"}.svg`)
-            document.querySelector("main").classList.toggle("evening", !isDaytime(date.getHours()))
+            document.querySelector("body").classList.toggle("evening", !isDaytime(date.getHours()))
             document.querySelector(".details").classList.toggle("evening", !isDaytime(date.getHours()))
         })
 }
