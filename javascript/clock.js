@@ -19,6 +19,7 @@ function fetchTimeData() {
             document.getElementById("simple-greeting").textContent = greetingBy(date.getHours())
             document.querySelector(".greeting img").setAttribute("src", `assets/desktop/icon-${isDaytime(date.getHours()) ? "sun" : "moon"}.svg`)
             document.querySelector("body").classList.toggle("evening", !isDaytime(date.getHours()))
+            document.querySelector(".loading").classList.add("hidden")
         })
 }
 
