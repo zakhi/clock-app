@@ -179,9 +179,6 @@ body {
   --color-dark-75: rgba(0, 0, 0, 0.75);
   --color-light: #fff;
   --color-light-75: rgba(255, 255, 255, 0.75);
-  --background-daytime: url("../assets/mobile/bg-image-daytime.jpg");
-  --background-nighttime: url("../assets/mobile/bg-image-nighttime.jpg");
-  --background-main: var(--background-daytime);
 }
 
 body {
@@ -196,9 +193,33 @@ body {
 }
 
 main {
-  background: var(--background-main) no-repeat, rgba(0, 0, 0, 0.4);
+  --background-image: url("../assets/mobile/bg-image-daytime.jpg");
+  background: var(--background-image) no-repeat, rgba(0, 0, 0, 0.4);
   background-size: cover;
   background-blend-mode: multiply;
+}
+@media (min-width: 48em) {
+  main {
+    --background-image: url("../assets/tablet/bg-image-daytime.jpg");
+  }
+}
+@media (min-width: 78em) {
+  main {
+    --background-image: url("../assets/desktop/bg-image-daytime.jpg");
+  }
+}
+main.evening {
+  --background-image: url("../assets/mobile/bg-image-nighttime.jpg");
+}
+@media (min-width: 48em) {
+  main.evening {
+    --background-image: url("../assets/tablet/bg-image-nighttime.jpg");
+  }
+}
+@media (min-width: 78em) {
+  main.evening {
+    --background-image: url("../assets/desktop/bg-image-nighttime.jpg");
+  }
 }
 
 .more-button {
@@ -229,6 +250,11 @@ main {
   grid-template-rows: auto 1fr auto;
   place-items: end start;
 }
+@media (min-width: 48em) {
+  main {
+    padding: 5em 4em 4em;
+  }
+}
 main.compact {
   grid-template-rows: max-content auto;
   align-items: start;
@@ -245,9 +271,20 @@ main.compact .quote {
   gap: 0.5em 1em;
   align-items: start;
 }
+@media (min-width: 48em) {
+  .quote {
+    max-width: 35.8em;
+    row-gap: 0.8125em;
+  }
+}
 
 .clock {
   margin-top: 4.1875em;
+}
+@media (min-width: 48em) {
+  .clock {
+    margin-top: 5.625em;
+  }
 }
 
 .greeting .extended-greeting {
@@ -263,12 +300,17 @@ main.compact .quote {
   margin-right: 1em;
 }
 
-.current-time {
+.current-time, .location {
   margin-top: 1em;
 }
+@media (min-width: 48em) {
+  .current-time, .location {
+    margin-top: 0;
+  }
+}
 
-.location {
-  margin-top: 1em;
+.timezone {
+  margin-left: 0.33em;
 }
 
 .more-button {
@@ -279,12 +321,25 @@ main.compact .quote {
   display: flex;
   align-items: center;
 }
+@media (min-width: 48em) {
+  .more-button {
+    margin-top: 5em;
+    padding-block: 0.5em;
+    padding-inline: 1.3125em 0.5em;
+  }
+}
 .more-button > * {
   display: block;
 }
 .more-button img {
   width: 2.667em;
   margin-left: 1.33em;
+}
+@media (min-width: 48em) {
+  .more-button img {
+    width: 2.5em;
+    margin-left: 0.8125em;
+  }
 }
 .more-button img.pointing-down {
   transform: rotate(180deg);

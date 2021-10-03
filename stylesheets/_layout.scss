@@ -11,6 +11,10 @@ main {
   grid-template-rows: auto 1fr auto;
   place-items: end start;
 
+  @include for-tablet {
+    padding: 5em 4em 4em;
+  }
+
   &.compact {
     grid-template-rows: max-content auto;
     align-items: start;
@@ -28,10 +32,19 @@ main {
   grid-auto-flow: column;
   gap: 0.5em 1em;
   align-items: start;
+
+  @include for-tablet {
+    max-width: 35.8em;
+    row-gap: 0.8125em;
+  }
 }
 
 .clock {
   margin-top: 4.1875em;
+
+  @include for-tablet {
+    margin-top: 5.625em;
+  }
 }
 
 .greeting {
@@ -49,12 +62,16 @@ main {
   }
 }
 
-.current-time {
+.current-time, .location {
   margin-top: 1em;
+
+  @include for-tablet {
+    margin-top: 0;
+  }
 }
 
-.location {
-  margin-top: 1em;
+.timezone {
+  margin-left: 0.33em;
 }
 
 .more-button {
@@ -65,6 +82,12 @@ main {
   display: flex;
   align-items: center;
 
+  @include for-tablet {
+    margin-top: 5em;
+    padding-block: 0.5em;
+    padding-inline: 1.3125em 0.5em;
+  }
+
   & > * {
     display: block;
   }
@@ -72,6 +95,11 @@ main {
   img {
     width: 2.667em;
     margin-left: 1.33em;
+
+    @include for-tablet {
+      width: 2.5em;
+      margin-left: 0.8125em;
+    }
 
     &.pointing-down {
       transform: rotate(180deg);

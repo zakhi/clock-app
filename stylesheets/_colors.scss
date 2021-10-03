@@ -1,3 +1,5 @@
+@use "resolutions" as *;
+
 /***********************
  * Colors & Background *
  ***********************/
@@ -9,10 +11,6 @@
   --color-dark-75: rgba(0, 0, 0, 0.75);
   --color-light: #fff;
   --color-light-75: rgba(255, 255, 255, 0.75);
-
-  --background-daytime: url("../assets/mobile/bg-image-daytime.jpg");
-  --background-nighttime: url("../assets/mobile/bg-image-nighttime.jpg");
-  --background-main: var(--background-daytime);
 }
 
 body {
@@ -29,7 +27,29 @@ body {
 }
 
 main {
-  background: var(--background-main) no-repeat, rgba(0, 0, 0, 0.4);
+  --background-image: url("../assets/mobile/bg-image-daytime.jpg");
+
+  @include for-tablet {
+    --background-image: url("../assets/tablet/bg-image-daytime.jpg");
+  }
+
+  @include for-desktop {
+    --background-image: url("../assets/desktop/bg-image-daytime.jpg");
+  }
+
+  &.evening {
+    --background-image: url("../assets/mobile/bg-image-nighttime.jpg");
+
+    @include for-tablet {
+      --background-image: url("../assets/tablet/bg-image-nighttime.jpg");
+    }
+
+    @include for-desktop {
+      --background-image: url("../assets/desktop/bg-image-nighttime.jpg");
+    }
+  }
+
+  background: var(--background-image) no-repeat, rgba(0, 0, 0, 0.4);
   background-size: cover;
   background-blend-mode: multiply;
 }
