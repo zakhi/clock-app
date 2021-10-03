@@ -14,7 +14,7 @@ function fetchTimeData() {
             document.querySelector(".timezone").textContent = timeData.abbreviation
             document.getElementById("current-timezone").textContent = timeData.timezone
             document.getElementById("day-of-year").textContent = timeData.day_of_year
-            document.getElementById("day-of-week").textContent = timeData.day_of_week
+            document.getElementById("day-of-week").textContent = timeData.day_of_week + 1
             document.getElementById("week-number").textContent = timeData.week_number
             document.getElementById("simple-greeting").textContent = greetingBy(date.getHours())
             document.querySelector(".greeting img").setAttribute("src", `assets/desktop/icon-${isDaytime(date.getHours()) ? "sun" : "moon"}.svg`)

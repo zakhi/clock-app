@@ -113,13 +113,36 @@ main {
   bottom: 0;
   padding: 3em 1.625em;
 
+  @include for-tablet {
+    padding: 7.5em 4em;
+  }
+
+  ul {
+    @include for-tablet {
+      display: grid;
+      grid-template: auto auto / max-content max-content;
+      grid-auto-flow: column;
+      place-items: start;
+      gap: 3em 5em;
+    }
+  }
+
   li {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    @include for-tablet {
+      flex-direction: column;
+      align-items: start;
+    }
+
     & + * {
       margin-top: 1em;
+
+      @include for-tablet {
+        margin-top: 0;
+      }
     }
   }
 }
