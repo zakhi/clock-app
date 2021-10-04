@@ -5,12 +5,12 @@
  ***********************/
 
 :root {
-  --color-dark: #000;
+  --color-dark: rgb(0, 0, 0);
   --color-dark-50: rgba(0, 0, 0, 0.5);
   --color-dark-75: rgba(0, 0, 0, 0.75);
-  --color-less-dark: #303030;
+  --color-less-dark: rgb(48, 48, 48);
   --color-less-dark-25: rgba(48, 48, 48, 0.25);
-  --color-light: #fff;
+  --color-light: rgb(255, 255, 255);
   --color-light-25: rgba(255, 255, 255, 0.25);
   --color-light-75: rgba(255, 255, 255, 0.75);
 }

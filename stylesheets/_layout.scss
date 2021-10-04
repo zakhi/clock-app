@@ -145,8 +145,10 @@ main {
   }
 
   ul {
+    display: grid;
+    gap: 1em;
+
     @include for-tablet {
-      display: grid;
       grid-template: auto auto / max-content max-content;
       grid-auto-flow: column;
       place-items: start;
@@ -175,14 +177,6 @@ main {
 
       &:nth-of-type(3), &:nth-of-type(4) {
         padding-left: 5.875em;
-      }
-    }
-
-    & + * {
-      margin-top: 1em;
-
-      @include for-tablet {
-        margin-top: 0;
       }
     }
   }

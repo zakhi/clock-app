@@ -173,12 +173,12 @@ body {
  * Colors & Background *
  ***********************/
 :root {
-  --color-dark: #000;
+  --color-dark: rgb(0, 0, 0);
   --color-dark-50: rgba(0, 0, 0, 0.5);
   --color-dark-75: rgba(0, 0, 0, 0.75);
-  --color-less-dark: #303030;
+  --color-less-dark: rgb(48, 48, 48);
   --color-less-dark-25: rgba(48, 48, 48, 0.25);
-  --color-light: #fff;
+  --color-light: rgb(255, 255, 255);
   --color-light-25: rgba(255, 255, 255, 0.25);
   --color-light-75: rgba(255, 255, 255, 0.75);
 }
@@ -398,9 +398,12 @@ main.compact .quote {
     padding: 4.625em 10.3125em;
   }
 }
+.details ul {
+  display: grid;
+  gap: 1em;
+}
 @media (min-width: 48em) {
   .details ul {
-    display: grid;
     grid-template: auto auto/max-content max-content;
     grid-auto-flow: column;
     place-items: start;
@@ -431,17 +434,9 @@ main.compact .quote {
     padding-left: 5.875em;
   }
 }
-.details li + * {
-  margin-top: 1em;
-}
-@media (min-width: 48em) {
-  .details li + * {
-    margin-top: 0;
-  }
-}
 
 .loading {
-  --spinner-color: #fff;
+  --spinner-color: white;
   position: absolute;
   top: 50%;
   left: 50%;
