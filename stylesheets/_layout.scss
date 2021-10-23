@@ -24,7 +24,12 @@ main {
   }
 
   &.compact {
-    grid-template-rows: max-content max-content;
+    grid-template-rows: 1fr max-content;
+    height: calc(100vh - 16em);
+
+    @include for-tablet {
+      height: calc(100vh - 27.625em);
+    }
 
     @include for-desktop {
       grid-template: "clock more" max-content / auto max-content;
@@ -47,18 +52,6 @@ main {
   @include for-tablet {
     max-width: 35.8em;
     row-gap: 0.8125em;
-  }
-}
-
-.clock {
-  margin-top: 4.1875em;
-
-  @include for-tablet {
-    margin-top: 5.625em;
-  }
-
-  @include for-desktop {
-    margin-top: 0;
   }
 }
 

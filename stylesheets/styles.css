@@ -274,7 +274,13 @@ main {
   }
 }
 main.compact {
-  grid-template-rows: max-content max-content;
+  grid-template-rows: 1fr max-content;
+  height: calc(100vh - 16em);
+}
+@media (min-width: 48em) {
+  main.compact {
+    height: calc(100vh - 27.625em);
+  }
 }
 @media (min-width: 78em) {
   main.compact {
@@ -297,20 +303,6 @@ main.compact .quote {
   .quote {
     max-width: 35.8em;
     row-gap: 0.8125em;
-  }
-}
-
-.clock {
-  margin-top: 4.1875em;
-}
-@media (min-width: 48em) {
-  .clock {
-    margin-top: 5.625em;
-  }
-}
-@media (min-width: 78em) {
-  .clock {
-    margin-top: 0;
   }
 }
 
