@@ -196,7 +196,7 @@ body {
 
 body {
   --background-image: url("../assets/mobile/bg-image-daytime.jpg");
-  --detail-background: var(--color-light-75);
+  --details-background: var(--color-light-75);
   --details-color: var(--color-less-dark);
   --details-border: var(--color-less-dark-25);
   background: var(--background-image) no-repeat, rgba(0, 0, 0, 0.4);
@@ -215,7 +215,7 @@ body {
 }
 body.evening {
   --background-image: url("../assets/mobile/bg-image-nighttime.jpg");
-  --detail-background: var(--color-dark-75);
+  --details-background: var(--color-dark-75);
   --details-color: var(--color-light);
   --details-border: var(--color-light-25);
 }
@@ -239,7 +239,7 @@ body.evening {
 }
 
 .details {
-  background: var(--detail-background);
+  background: var(--details-background);
   backdrop-filter: blur(2.5em);
   color: var(--details-color);
 }
@@ -427,6 +427,9 @@ main.compact .quote {
   }
 }
 
+/*********************
+ * Loading Animation *
+ *********************/
 .loading {
   --spinner-color: white;
   position: absolute;

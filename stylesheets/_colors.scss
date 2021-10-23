@@ -30,10 +30,9 @@ body {
 
 body {
   --background-image: url("../assets/mobile/bg-image-daytime.jpg");
-  --detail-background: var(--color-light-75);
+  --details-background: var(--color-light-75);
   --details-color: var(--color-less-dark);
   --details-border: var(--color-less-dark-25);
-
 
   @include for-tablet {
     --background-image: url("../assets/tablet/bg-image-daytime.jpg");
@@ -45,7 +44,7 @@ body {
 
   &.evening {
     --background-image: url("../assets/mobile/bg-image-nighttime.jpg");
-    --detail-background: var(--color-dark-75);
+    --details-background: var(--color-dark-75);
     --details-color: var(--color-light);
     --details-border: var(--color-light-25);
 
@@ -74,7 +73,7 @@ body {
 }
 
 .details {
-  background: var(--detail-background);
+  background: var(--details-background);
   backdrop-filter: blur(2.5em);
   color: var(--details-color);
 
